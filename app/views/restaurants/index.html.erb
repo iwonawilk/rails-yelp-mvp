@@ -1,0 +1,16 @@
+<div class="navbar bg-light d-flex">
+  <h2>Finder</h2>
+  <%= link_to "Add a new restaurant", new_restaurant_path, class: 'btn btn-primary' %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-1">
+      <% @restaurants.each do |restaurant| %>
+        <%= link_to restaurant_path(restaurant) do %>
+          <h1 class="text-success"><%= restaurant.name %></h1>
+        <% end %>
+        <p><%= restaurant.category %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
